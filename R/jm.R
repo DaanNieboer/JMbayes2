@@ -456,7 +456,7 @@ jm <- function (Surv_object, Mixed_objects, time_var, recurrent = FALSE,
         dataS_H2 <- SurvData_HazardModel(st2, dataS, Time_start,
                                          paste0(idT, "_", strata), time_var)
         mf2 <- model.frame.default(terms_Surv_noResp, data = dataS_H2)
-        W_h <- construct_Wmat(terms_Surv_noResp, mf2)
+        W_H2 <- construct_Wmat(terms_Surv_noResp, mf2)
         if (!any_gammas) {
             W_H2 <- matrix(0.0, nrow = nrow(W_H2), ncol = 1L)
         }
